@@ -1,17 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 style="color: white">{{ title }}</h1>
+<div><T /></div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import T from './components/FormModal.vue'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components:{T},
+  data (){
+    return {
+      title : 'Maxnet Digital Services Online Payment',
+      
+    }
+  },
+ 
 }
+
 </script>
 
 <style>
@@ -23,4 +28,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
