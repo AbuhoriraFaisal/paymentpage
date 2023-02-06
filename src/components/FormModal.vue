@@ -115,22 +115,13 @@ export default ({
         //do encryption with RSA for IPIN with the Public Key  
         IPIN = myuuid + IPIN
         let key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgaYaBlc+yd+V4Cxt+jAHvKhzlmUk7klqEv2beiDj8B7JV0p54poRx8o66Ekl2r1+MgxIIp9vSVjBoWNEYlssyJaPliBaIGxFanPj00KSCBuX00egSBvKad6qkGrPdX7St/Gu/2qmLm2ycxv4mKH1BkPblXFkO+CxLuHRkEkpJqQIDAQAB"
-        const encryptedText = this.$CryptoJS.AES.encrypt(key ,IPIN).toString()
-        
-        // let encrypted = window.btoa("jkjjk", "677767")
+        // const encryptedText = this.$CryptoJS.AES.encrypt(key, IPIN).toString()
         var encrypt = new JSEncrypt();
-    //     var publicKey = `
-    // -----BEGIN PUBLIC KEY-----
-    // MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
-    // FOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76
-    // xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4
-    // gwQco1KRMDSmXSMkDwIDAQAB
-    // -----END PUBLIC KEY-----`;
-    encrypt.setPublicKey(key);
-    var encrypted = encrypt.encrypt("Hi There!");
-        console.log("RSA: ", encryptedText, "---===> " );
-        console.log("RSA: ", encrypted, "---===> " );
-        
+        encrypt.setPublicKey(key);
+        var encrypted = encrypt.encrypt("Hi There!");
+        // console.log("RSA: ", encryptedText, "---===> ");
+        console.log("RSA: ", encrypted, "---===> ");
+
 
         let res = await axios.post('http://10.160.16.10:1447/max-pay/special-payment/do-payment',
           {
@@ -148,7 +139,7 @@ export default ({
         alert(res.data.body.responseMessage)
       }
       catch (error) {
-        console.log(error)
+        console.log(error.message)
       }
     }
 
