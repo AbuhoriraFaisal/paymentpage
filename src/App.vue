@@ -7,7 +7,7 @@
 import T from './components/FormModal.vue'
 export default {
   name: 'App',
-  components:{T},
+  components:{T },
   data (){
     return {
       title : 'Maxnet Digital Services Online Payment',
