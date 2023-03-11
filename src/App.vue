@@ -10,7 +10,7 @@ export default {
   components:{T },
   data (){
     return {
-      title : 'Maxnet Digital Services Online Payment',
+      title : 'Maxnet Digital Services Online-Payment',
       
     }
   },
